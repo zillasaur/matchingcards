@@ -15,9 +15,16 @@
 @implementation ViewController
 
 - (IBAction)touchCardButton:(UIButton *)sender {
-    UIImage *cardImage = [UIImage imageNamed:@"card back"];
-    [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-    [sender setTitle:@"" forState:UIControlStateNormal];
+    if ([sender.currentTitle length]) {
+        UIImage *cardImage = [UIImage imageNamed:@"card back"];
+        [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
+        [sender setTitle:@"" forState:UIControlStateNormal];
+    }
+    else {
+        UIImage *cardImage = [UIImage imageNamed:@"card front"];
+        [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
+        [sender setTitle:@"pooky" forState:UIControlStateNormal];
+    }
 }
 
 @end
