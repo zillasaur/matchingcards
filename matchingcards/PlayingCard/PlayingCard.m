@@ -14,13 +14,13 @@
 
 - (NSString *)contents {
     NSArray *rankStrings = @[@"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
-    return [cankStrings[self.rank] stringByAppendingString:self.suit];
+    return [rankStrings[self.rank] stringByAppendingString:self.suit];
     
 }
 
 @synthesize suit = _suit;
 
-+ (NSArray *)validSuit {
++ (NSArray *)validSuits {
     return @[@"♠︎", @"♦︎", @"♥︎", @"♣︎"];
 }
 
@@ -39,7 +39,7 @@
 }
 
 + (NSUInteger)maxRank {
-    return [[self rankString] count]-1;
+    return [[self rankStrings] count]-1;
 }
 
 - (void)setRank:(NSUInteger)rank {
